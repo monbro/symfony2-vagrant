@@ -2,3 +2,5 @@ www/*
 .vagrant
 *.sublime-project
 *.sublime-workspace
+
+puppet/manifests/npm-debug.log

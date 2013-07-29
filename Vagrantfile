@@ -19,3 +19,9 @@ Vagrant::Config.run do |config|
 	end
 
 end
+
+Vagrant.configure("2") do |config|
+  	config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", 4096, "--cpus", "2"]
+	end
+end

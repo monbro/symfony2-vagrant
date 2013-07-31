@@ -88,11 +88,9 @@ You tell me
 For some reason, the new php5-fpm is not installed, according to http://askubuntu.com/questions/326681/php5-fpm-php-5-5-wont-install-cant-install-libsystemd-daemon0
  try :
  
-    ```sudo add-apt-repository -y ppa:ondrej/systemd```
-    
-    ```sudo apt-get update```
-    
-    ```sudo apt-get install -y php5-fpm```
+    sudo add-apt-repository -y ppa:ondrej/systemd
+    sudo apt-get update
+    sudo apt-get install -y php5-fpm
     
 And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append to your /etc/hosts
   

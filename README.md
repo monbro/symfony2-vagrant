@@ -96,7 +96,7 @@ For some reason, the new php5-fpm is not installed, according to http://askubunt
     sudo apt-get update
     sudo apt-get install -y php5-fpm
     
-And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append to your /etc/hosts
+And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append (MAC OSX) to your /etc/hosts
   
     33.33.33.100    partnermarketing2.com
     33.33.33.100    intel.partnermarketing2.com

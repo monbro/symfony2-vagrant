@@ -85,6 +85,10 @@ You tell me
 
 ## Special Notes
 
+Need to install the mongo drivr for php http://php.net/manual/en/mongo.installation.php
+
+    sudo pecl install mongo
+
 For some reason, the new php5-fpm is not installed, according to http://askubuntu.com/questions/326681/php5-fpm-php-5-5-wont-install-cant-install-libsystemd-daemon0
  try :
  

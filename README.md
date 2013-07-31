@@ -94,6 +94,5 @@ For some reason, the new php5-fpm is not installed, according to http://askubunt
     
 And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append to your /etc/hosts
   
-    ```33.33.33.100    partnermarketing2.com```
-    
-    ```33.33.33.100    intel.partnermarketing2.com```
+    33.33.33.100    partnermarketing2.com
+    33.33.33.100    intel.partnermarketing2.com

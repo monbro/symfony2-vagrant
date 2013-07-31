@@ -85,18 +85,35 @@ You tell me
 
 ## Special Notes
 
-Need to install the mongo drivr for php http://php.net/manual/en/mongo.installation.php
+Go into you vagrant by
+
+    vagrant ssh
+
+We need to install the mongo php driver for php for some reason http://php.net/manual/en/mongo.installation.php simply by calling
 
     sudo pecl install mongo
 
-For some reason, the new php5-fpm is not installed, according to http://askubuntu.com/questions/326681/php5-fpm-php-5-5-wont-install-cant-install-libsystemd-daemon0
+Now exit your "vagrant ssh" via "exit" and reboot teh VM by the commends:
+
+    vagrant halt
+    vagrant up
+    
+For some reason, the new php5-fpm is not installed as well, according to http://askubuntu.com/questions/326681/php5-fpm-php-5-5-wont-install-cant-install-libsystemd-daemon0
  try :
  
     sudo add-apt-repository -y ppa:ondrej/systemd
     sudo apt-get update
     sudo apt-get install -y php5-fpm
     
-And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append (MAC OSX) to your /etc/hosts
+In case php5-fpm is not running (check by using "service php5-fpm status") you can start it with
+
+    sudo service php5-fpm start
+    
+And just in case, maybe we want to restart nginx
+    
+    sudo service nginx restart
+    
+And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append (MAC OSX) to your real machine at /etc/hosts
   
     33.33.33.100    partnermarketing2.com
     33.33.33.100    intel.partnermarketing2.com

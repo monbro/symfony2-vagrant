@@ -37,6 +37,16 @@ class dev-packages {
         require => Package["rubygems"],
     }
 
+    exec { 'build link for compass installation':
+        command => 'sudo ln /usr/local/bin/compass /usr/bin/compass',
+        require => Package["rubygems"],
+    }
+
+    exec { 'install compass-connector using RubyGems':
+        command => 'gem install compass-connector',
+        require => Package["rubygems"],
+    }
+
     exec { 'install capistrano_rsync_with_remote_cache using RubyGems':
         command => 'gem install capistrano_rsync_with_remote_cache',
         require => Package["capistrano"],

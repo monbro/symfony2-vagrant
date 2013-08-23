@@ -37,6 +37,11 @@ class dev-packages {
         require => Package["rubygems"],
     }
 
+    exec { 'build link for compass installation':
+        command => 'sudo ln /usr/local/bin/compass /usr/bin/compass',
+        require => Package["rubygems"],
+    }
+
     exec { 'install compass-connector using RubyGems':
         command => 'gem install compass-connector',
         require => Package["rubygems"],

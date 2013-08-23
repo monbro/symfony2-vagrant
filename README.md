@@ -115,5 +115,5 @@ And just in case, maybe we want to restart nginx
     
 And to make the vagrant accesible by intel.partnermarketing2.com and partenrmarketing2.com just append (MAC OSX) to your real machine at /etc/hosts
   
-    33.33.33.100    partnermarketing2.com
-    33.33.33.100    intel.partnermarketing2.com
+    33.33.33.100    domain.com
+    33.33.33.100    subdomain.domain.com

@@ -43,7 +43,7 @@ class dev-packages {
     }
 
     exec { 'install compass-connector using RubyGems':
-        command => 'gem install compass-connector',
+        command => 'gem install compass-connector  -v 0.8.1',
         require => Package["rubygems"],
     }
 

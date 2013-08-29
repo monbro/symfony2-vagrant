@@ -117,3 +117,7 @@ And to make the vagrant accesible by intel.partnermarketing2.com and partenrmark
   
     33.33.33.100    domain.com
     33.33.33.100    subdomain.domain.com
+    
+To update your nodejs / node / npm
+
+   http://stackoverflow.com/questions/16302436/install-nodejs-on-ubuntu-12-10

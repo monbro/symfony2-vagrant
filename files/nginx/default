@@ -20,7 +20,7 @@ server {
   }
 
   # pass the PHP scripts to FastCGI server listening socket
-  location ~ ^/(app|app_dev|genghis)\.php(/|$) {
+  location ~ ^/(app|app_dev)\.php(/|$) {
     fastcgi_pass unix://var/run/php5-fpm.sock;
     fastcgi_keep_conn on;
     fastcgi_split_path_info ^(.+\.php)(/.*)$;
@@ -52,4 +52,20 @@ server {
   location /phpMyAdmin {
     rewrite ^/* /phpmyadmin last;
   }
+}
+
+server {
+   listen       8123;
+   server_name  genghis;
+   root /usr/share/genghis;
+
+   location / {
+     fastcgi_pass unix://var/run/php5-fpm.sock;
+     include /etc/nginx/fastcgi_params;
+     fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+     fastcgi_param SCRIPT_NAME /index.php;
+     fastcgi_param PATH_INFO $uri;
+
+     rewrite /index.php / permanent;
+   }
 }

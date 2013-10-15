@@ -80,6 +80,31 @@ To speed up the startup process use ```$ vagrant up --no-provision``` (thanks to
     
 * Edit ```web/app_dev.php``` to allow host
 
+## Set up Shortcuts
+
+* connect to you vagrant via 'vagrant ssh'
+
+* open the profile file
+
+    ```vi ~/.bashrc```
+
+* go to the end by pressing 'shif + g'
+
+* insert the commands by pressing 'i' and navigate by the arrow-keys and return to a new line
+
+```
+alias cc="php app/console cache:clear"
+alias kk="php app/console cache:clear;php app/console assetic:dump;php app/console fos:js-routing:dump;karma start app/config/karma.conf.js;karma start app/config/karma-e2e-client.conf.js;karma start app/config/karma-e2e-globaladmin.conf.js;"
+```
+
+* exit the insert mode by pressing 'esc' button and save by pressing ':' and 'w' and hit return
+
+* exit the file by pressing ':' and 'q' and hit return
+
+* enter a 'bash -r' to refresh your bash window to be able to use the shortcuts
+
+* use a shortcut simply by using 'cc' or 'kk'
+
 ## TODO
 You tell me
 

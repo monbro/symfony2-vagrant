@@ -53,3 +53,19 @@ server {
     rewrite ^/* /phpmyadmin last;
   }
 }
+
+server {
+   listen       8123;
+   server_name  genghis;
+   root /usr/share/genghis;
+
+   location / {
+     fastcgi_pass unix://var/run/php5-fpm.sock;
+     include /etc/nginx/fastcgi_params;
+     fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+     fastcgi_param SCRIPT_NAME /index.php;
+     fastcgi_param PATH_INFO $uri;
+
+     rewrite /index.php / permanent;
+   }
+}

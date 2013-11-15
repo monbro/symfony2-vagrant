@@ -6,15 +6,12 @@ class system-update {
     exec { 'apt-get update':
         command => 'apt-get update',
     }
-
-    $sysPackages = [ "build-essential" ]
-    package { $sysPackages:
-        ensure => "installed",
-        require => Exec['apt-get update'],
-    }
 }
 
 class dev-packages {
+
+    include gcc
+    include wget
 
     $devPackages = [ "vim", "curl", "git", "nodejs", "npm", "capistrano", "rubygems", "openjdk-7-jdk", "libaugeas-ruby" ]
     package { $devPackages:
@@ -201,6 +198,11 @@ class composer {
         creates => '/usr/bin/composer',
         require => [Package['php5-cli'], Package['curl']],
     }
+
+    exec { 'composer self update':
+        command => 'composer self-update',
+        require => [Package['php5-cli'], Package['curl'], Exec['install composer php dependency management']],
+    }
 }
 
 class memcached {
@@ -222,3 +224,4 @@ include php-setup
 include composer
 include phpqatools
 include memcached
+include redis

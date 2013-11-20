@@ -94,8 +94,14 @@ To speed up the startup process use ```$ vagrant up --no-provision``` (thanks to
 * insert the commands by pressing 'i' and navigate by the arrow-keys and return to a new line
 
 ```
-alias cc="php app/console cache:clear"
-alias kk="php app/console cache:clear;php app/console doctrine:mongo:fixture;php app/console assetic:dump;php app/console fos:js-routing:dump;karma start app/config/karma.conf.js;karma start app/config/karma-e2e-client.conf.js;karma start app/config/karma-e2e-globaladmin.conf.js;"
+alias cc="php app/console cache:clear;"
+alias cct="php app/console cache:clear --env=test;"
+alias kp="php app/console cache:clear;php app/console doctrine:mongo:fixture;php app/console assetic:dump;php app/console fos:js-routing:dump;"
+alias kk="php app/console cache:clear;php app/console doctrine:mongo:fixture;php app/console assetic:dump;php app/console fos:js-routing:dump;node_modules/karma/bin/karma start app/config/karma.conf.js;node_modules/karma/bin/karma start app/config/karma-e2e-client.conf.js;node_modules/karma/bin/karma start app/config/karma-e2e-globaladmin.conf.js;"
+alias kcp=node_modules/karma/bin/karma start app/config/karma-e2e-client.conf.js
+alias kc=node_modules/karma/bin/karma start app/config/karma-e2e-client.conf.js --browsers hookitup
+alias kgp=node_modules/karma/bin/karma start app/config/karma-e2e-globaladmin.conf.js
+alias kg=node_modules/karma/bin/karma start app/config/karma-e2e-globaladmin.conf.js --browsers hookitup
 ```
 
 * exit the insert mode by pressing 'esc' button and save by pressing ':' and 'w' and hit return
